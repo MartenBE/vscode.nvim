@@ -5,17 +5,17 @@ local colors = {}
 
 colors.fg = function()
     if vim.o.background == 'dark' then
-        return '#ffffff'
+        return '#cccccc'
     else
-        return '#343434'
+        return '#3b3b3b'
     end
 end
 
 colors.bg = function()
     if vim.o.background == 'dark' then
-        return '#252526'
+        return '#181818'
     else
-        return '#f3f3f3'
+        return '#f8f8f8'
     end
 end
 
@@ -31,7 +31,7 @@ colors.bluegreen = function()
     if vim.o.background == 'dark' then
         return '#4ec9b0'
     else
-        return '#16825d'
+        return '#267f99'
     end
 end
 
@@ -56,7 +56,11 @@ colors.yelloworrange = function()
 end
 
 colors.blue = function()
-    return '#0a7aca'
+    if vim.o.background == 'dark' then
+        return '#0078d4'
+    else
+        return '#005fb8'
+    end
 end
 
 colors.red = function()

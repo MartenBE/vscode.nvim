@@ -1,25 +1,25 @@
 ! vscode dark .Xresources
 
-*.foreground: #d4d4d4
+*.foreground: #cccccc
 *.background: #1f1f1f
-*.cursorColor: #d4d4d4
+*.cursorColor: #aeafad
 
-*.color0: #1f1f1f
-*.color1: #f44747
-*.color2: #608b4e
-*.color3: #dcdcaa
-*.color4: #569cd6
-*.color5: #c678dd
-*.color6: #56b6c2
-*.color7: #d4d4d4
-*.color8: #808080
-*.color9: #f44747
-*.color10: #608b4e
-*.color11: #dcdcaa
-*.color12: #569cd6
-*.color13: #c678dd
-*.color14: #56b6c2
-*.color15: #d4d4d4
+*.color0: #000000
+*.color1: #cd3131
+*.color2: #0dbc79
+*.color3: #e5e510
+*.color4: #2472c8
+*.color5: #bc3fbc
+*.color6: #11a8cd
+*.color7: #e5e5e5
+*.color8: #666666
+*.color9: #f14c4c
+*.color10: #23d18b
+*.color11: #f5f543
+*.color12: #3b8eea
+*.color13: #d670d6
+*.color14: #29b8db
+*.color15: #e5e5e5
 
-Nsxiv.window.foreground: #608b4e
-Nsxiv.mark.foreground: #f44747
+Nsxiv.window.foreground: #0dbc79
+Nsxiv.mark.foreground: #cd3131
