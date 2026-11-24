@@ -2,6 +2,9 @@
 
 vscode.nvim (formerly `codedark.nvim`) is a Lua port of [vim-code-dark](https://github.com/tomasiser/vim-code-dark) colorscheme for [neovim](https://github.com/neovim/neovim) with VScode's light and dark theme
 
+The colors follow VS Code's default **Dark Modern** and **Light Modern** themes: syntax colors come from Dark+ / Light+
+(which the Modern themes build on), editor and plugin UI colors from Dark Modern / Light Modern.
+
 ![VSCode.nvim](./demo.png)
 
 ## Supported Plugins
@@ -27,6 +30,17 @@ vscode.nvim (formerly `codedark.nvim`) is a Lua port of [vim-code-dark](https://
 - [rainbow-delimiters](https://gitlab.com/HiPhish/rainbow-delimiters.nvim)
 - [which-key](https://github.com/folke/which-key.nvim)
 - [Snacks.indent](https://github.com/folke/snacks.nvim/blob/main/docs/indent.md)
+
+### Differences from VS Code
+
+Neovim can't reproduce everything VS Code draws, so a few colors are approximations:
+
+- Colors with transparency in VS Code (search matches, diff lines, word highlights, whitespace, inlay hints, ...) are
+  blended onto the editor or widget background.
+- The matching bracket gets VS Code's faint background plus an underline instead of a border.
+- Unnecessary code (`DiagnosticUnnecessary`) gets a dimmed gray instead of VS Code's reduced opacity.
+- In diff mode a changed line is green on both sides; VS Code shows the old side red and the new side green.
+- YAML strings are blue in the light theme, including double-quoted ones that Light+ shows red.
 
 ## ⬇️ Installation
 
@@ -60,9 +74,18 @@ The theme is manipulating the treesitter highlight queries as follows:
 [
   "break"
 ] @keyword.conditional
+
+"async" @keyword.modifier
 ```
 
-this mimics the behavior of VSCode's default theme more closely. Be aware that
+### Python
+
+```query
+"async" @keyword.modifier
+```
+
+`await` is control flow (pink) in VS Code while `async` is a modifier (blue). This
+mimics the behavior of VSCode's default theme more closely. Be aware that
 this is not a perfect solution but as far as we know, there is no better way to
 achieve this and most popular themes are doing the same thing.
 
@@ -101,7 +124,7 @@ require('vscode').setup({
     -- Override palette colors (see ./lua/vscode/colors.lua and "Palette" below).
     -- This replaces every use of that palette color, not one highlight group.
     color_overrides = {
-        d_gray_70 = '#FFFFFF', -- dark theme line numbers, fold column, borders, ...
+        d_gray_150 = '#FFFFFF', -- dark theme line numbers and fold column
     },
 
     -- Override highlight groups (see ./lua/vscode/theme.lua)
@@ -200,10 +223,10 @@ Every color in [`lua/vscode/colors.lua`](./lua/vscode/colors.lua) is named `<the
 
 - **theme**: `d_` for the dark theme, `l_` for the light theme
 - **family**: one of `black`, `white`, `gray`, `red`, `brown`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`
-- **rank**: `10`, `20`, `30`, … from darkest to lightest within that family
+- **rank**: `10`, `20`, `30`, ... from darkest to lightest within that family
 
-For example `d_blue_60` is the keyword blue of the dark theme. `require('vscode.colors').get_colors()` returns both
-palettes regardless of `background`, so pick the one you need: `vim.o.background == 'dark' and c.d_blue_60 or c.l_blue_30`.
+For example `d_blue_100` is the keyword blue of the dark theme. `require('vscode.colors').get_colors()` returns both
+palettes regardless of `background`, so pick the one you need: `vim.o.background == 'dark' and c.d_blue_100 or c.l_blue_40`.
 
 > [!WARNING]
 > Older versions used semantic names such as `vscBack` or `vscLineNumber`. Those keys no longer exist; `color_overrides`
