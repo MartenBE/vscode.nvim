@@ -4,32 +4,36 @@ local config = require('vscode.config')
 local vscode = {}
 local colors = {}
 
+-- Follows VS Code's Dark Modern / Light Modern status bar (statusBar.*); the normal mode uses the
+-- accent color, the other modes keep their own hue.
 if vim.o.background == 'dark' then
-    colors.inactive = '#666666'
-    colors.bg = '#262626'
-    colors.bg2 = '#373737'
-    colors.fg = '#ffffff'
-    colors.red = '#f44747'
+    colors.inactive = '#9D9D9D'
+    colors.bg = '#181818'
+    colors.bg2 = '#2B2B2B'
+    colors.fg = '#CCCCCC'
+    colors.accent_fg = '#FFFFFF'
+    colors.red = '#F44747'
     colors.green = '#4EC9B0'
-    colors.blue = '#0a7aca'
+    colors.blue = '#0078D4'
     colors.lightblue = '#5CB6F8'
-    colors.yellow = '#ffaf00'
+    colors.yellow = '#FFAF00'
     colors.pink = '#DDB6F2'
 else
-    colors.inactive = '#888888'
-    colors.bg = '#F5F5F5'
-    colors.bg2 = '#E4E4E4'
-    colors.fg = '#343434'
+    colors.inactive = '#616161'
+    colors.bg = '#F8F8F8'
+    colors.bg2 = '#E5E5E5'
+    colors.fg = '#3B3B3B'
+    colors.accent_fg = '#FFFFFF'
     colors.red = '#FF0000'
     colors.green = '#008000'
-    colors.blue = '#AF00DB'
+    colors.blue = '#005FB8'
     colors.lightblue = '#0451A5'
-    colors.yellow = '#c08000'
+    colors.yellow = '#C08000'
     colors.pink = '#FFA3A3'
 end
 
 vscode.normal = {
-    a = { fg = vim.o.background == 'dark' and colors.fg or colors.bg, bg = colors.blue, gui = 'bold' },
+    a = { fg = colors.accent_fg, bg = colors.blue, gui = 'bold' },
     b = { fg = colors.blue, bg = config.opts.transparent and 'NONE' or colors.bg2 },
     c = { fg = colors.fg, bg = config.opts.transparent and 'NONE' or colors.bg },
 }
@@ -40,7 +44,7 @@ vscode.visual = {
 }
 
 vscode.inactive = {
-    a = { fg = colors.fg, bg = colors.bg, gui = 'bold' },
+    a = { fg = colors.inactive, bg = colors.bg, gui = 'bold' },
     b = { fg = colors.inactive, bg = config.opts.transparent and 'NONE' or colors.bg },
     c = { fg = colors.inactive, bg = config.opts.transparent and 'NONE' or colors.bg },
 }

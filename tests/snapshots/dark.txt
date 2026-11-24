@@ -1,25 +1,29 @@
 @annotation, fg=#DCDCAA
 @attribute, fg=#DCDCAA
 @attribute.builtin, fg=#4EC9B0
+@attribute.css, fg=#D7BA7D
+@attribute.scss, fg=#D7BA7D
 @boolean, fg=#569CD6
 @character, fg=#CE9178
+@character.special, fg=#D7BA7D
 @comment, fg=#6A9955
-@comment.error, bold=true, fg=#F44747
-@comment.note, bold=true, fg=#4EC9B0
-@comment.warning, bold=true, fg=#D7BA7D
+@comment.error, fg=#6A9955
+@comment.note, fg=#6A9955
+@comment.todo, fg=#6A9955
+@comment.warning, fg=#6A9955
 @conditional, fg=#C586C0
 @constant, fg=#4FC1FF
 @constant.builtin, fg=#569CD6
-@constant.macro, fg=#4EC9B0
-@constructor, fg=#569CD6
-@constructor.python, fg=#4EC9B0
-@decorator, fg=#9CDCFE
+@constant.css, fg=#D7BA7D
+@constant.macro, fg=#569CD6
+@constant.scss, fg=#D7BA7D
+@constructor, fg=#4EC9B0
+@constructor.lua, fg=#CCCCCC
 @define, fg=#C586C0
-@diff.delta, bg=#4B1818
-@diff.minus, bg=#6F1313
-@diff.plus, bg=#4B5632
+@diff.delta, fg=#569CD6
+@diff.minus, fg=#CE9178
+@diff.plus, fg=#B5CEA8
 @error, fg=#F44747
-@event, fg=#9CDCFE
 @exception, fg=#C586C0
 @field, fg=#9CDCFE
 @float, fg=#B5CEA8
@@ -28,47 +32,58 @@
 @function.macro, fg=#DCDCAA
 @function.method, fg=#DCDCAA
 @include, fg=#C586C0
-@interface, fg=#9CDCFE
 @keyword, fg=#569CD6
 @keyword.conditional, fg=#C586C0
+@keyword.conditional.ternary, fg=#D4D4D4
+@keyword.coroutine, fg=#C586C0
+@keyword.directive, fg=#C586C0
+@keyword.directive.define, fg=#C586C0
 @keyword.exception, fg=#C586C0
 @keyword.import, fg=#C586C0
 @keyword.repeat, fg=#C586C0
 @keyword.return, fg=#C586C0
-@label, fg=#9CDCFE
-@lsp.type.comment.c, fg=#51504F
-@lsp.type.comment.cpp, fg=#51504F
+@label, fg=#C8C8C8
+@lsp.type.comment.c, fg=#929292
+@lsp.type.comment.cpp, fg=#929292
 @lsp.type.enumMember, fg=#4FC1FF
 @lsp.type.keyword, fg=#569CD6
-@lsp.type.macro, fg=#4FC1FF
+@lsp.type.macro, fg=#569CD6
 @lsp.type.member, fg=#DCDCAA
 @lsp.type.type, fg=#4EC9B0
 @lsp.type.typeParameter, fg=#4EC9B0
 @lsp.typemod.keyword.controlFlow, fg=#C586C0
 @lsp.typemod.property.readonly, fg=#4FC1FF
-@lsp.typemod.type.defaultLibrary, fg=#569CD6
+@lsp.typemod.type.defaultLibrary, fg=#4EC9B0
 @lsp.typemod.variable.constant, fg=#4FC1FF
 @lsp.typemod.variable.readonly, fg=#4FC1FF
 @markup.heading, bold=true, fg=#569CD6
-@markup.heading.1.markdown, bold=true, fg=#569CD6
-@markup.heading.2.markdown, bold=true, fg=#CE9178
-@markup.heading.3.markdown, bold=true, fg=#DCDCAA
-@markup.heading.4.markdown, bold=true, fg=#6A9955
-@markup.heading.5.markdown, bold=true, fg=#569CD6
-@markup.heading.6.markdown, bold=true, fg=#C586C0
-@markup.italic, fg=#D4D4D4, italic=true
-@markup.link.label, fg=#9CDCFE
-@markup.link.url, fg=#D4D4D4
-@markup.list.checked, bg=#1F1F1F, bold=true, fg=#D7BA7D
-@markup.list.unchecked, bg=#1F1F1F, bold=true, fg=#D7BA7D
-@markup.raw, fg=#D4D4D4
-@markup.raw.markdown, fg=#CE9178
-@markup.raw.markdown_inline, fg=#CE9178
-@markup.strikethrough, fg=#D4D4D4, strikethrough=true
+@markup.heading.1.html, fg=#CCCCCC
+@markup.heading.1.xml, fg=#CCCCCC
+@markup.heading.2.html, fg=#CCCCCC
+@markup.heading.2.xml, fg=#CCCCCC
+@markup.heading.3.html, fg=#CCCCCC
+@markup.heading.3.xml, fg=#CCCCCC
+@markup.heading.4.html, fg=#CCCCCC
+@markup.heading.4.xml, fg=#CCCCCC
+@markup.heading.5.html, fg=#CCCCCC
+@markup.heading.5.xml, fg=#CCCCCC
+@markup.heading.6.html, fg=#CCCCCC
+@markup.heading.6.xml, fg=#CCCCCC
+@markup.heading.html, fg=#CCCCCC
+@markup.heading.xml, fg=#CCCCCC
+@markup.italic, fg=#C586C0, italic=true
+@markup.link, fg=#CCCCCC
+@markup.link.label, fg=#CE9178
+@markup.link.url, fg=#CCCCCC
+@markup.list, fg=#6796E6
+@markup.list.checked, fg=#6796E6
+@markup.list.unchecked, fg=#6796E6
+@markup.raw, fg=#CE9178
+@markup.raw.block, fg=#CCCCCC
+@markup.strikethrough, strikethrough=true
 @markup.strong, bold=true, fg=#569CD6
-@markup.underline, fg=#D7BA7D, underline=true
+@markup.underline, underline=true
 @method, fg=#DCDCAA
-@modifier, fg=#9CDCFE
 @module, fg=#4EC9B0
 @namespace, fg=#4EC9B0
 @number, fg=#B5CEA8
@@ -76,154 +91,177 @@
 @operator, fg=#D4D4D4
 @parameter, fg=#9CDCFE
 @property, fg=#9CDCFE
-@punctuation.bracket, fg=#D4D4D4
-@punctuation.delimiter, fg=#D4D4D4
-@punctuation.special, fg=#D4D4D4
-@regexp, fg=#F44747
+@property.css, fg=#9CDCFE
+@property.json, fg=#9CDCFE
+@property.jsonc, fg=#9CDCFE
+@property.scss, fg=#9CDCFE
+@property.yaml, fg=#569CD6
+@punctuation.bracket, fg=#CCCCCC
+@punctuation.delimiter, fg=#CCCCCC
+@punctuation.special, fg=#569CD6
+@punctuation.special.markdown, fg=#6A9955
 @repeat, fg=#C586C0
 @storageclass, fg=#569CD6
 @string, fg=#CE9178
-@string.regex, fg=#CE9178
-@string.regexp, fg=#CE9178
-@stringEscape, bold=true, fg=#CE9178
+@string.css, fg=#CE9178
+@string.escape, fg=#D7BA7D
+@string.html, fg=#CE9178
+@string.regex, fg=#D16969
+@string.regexp, fg=#D16969
+@string.scss, fg=#CE9178
+@string.special, fg=#CE9178
+@string.special.symbol, fg=#569CD6
+@string.special.url, fg=#CCCCCC
+@string.xml, fg=#CE9178
+@string.yaml, fg=#CE9178
+@stringEscape, fg=#D7BA7D
 @structure, fg=#9CDCFE
 @tag, fg=#569CD6
 @tag.attribute, fg=#9CDCFE
 @tag.builtin, fg=#569CD6
+@tag.css, fg=#D7BA7D
 @tag.delimiter, fg=#808080
-@text, fg=#D4D4D4
-@text.danger, bold=true, fg=#F44747
-@text.diff.add, bg=#4B5632
-@text.diff.delete, bg=#6F1313
-@text.emphasis, fg=#D4D4D4, italic=true
-@text.literal, fg=#D4D4D4
-@text.note, bold=true, fg=#4EC9B0
-@text.strike, fg=#D4D4D4, strikethrough=true
+@tag.scss, fg=#D7BA7D
+@text, fg=#CCCCCC
+@text.danger, fg=#6A9955
+@text.diff.add, fg=#B5CEA8
+@text.diff.delete, fg=#CE9178
+@text.emphasis, fg=#C586C0, italic=true
+@text.literal, fg=#CE9178
+@text.note, fg=#6A9955
+@text.strike, strikethrough=true
 @text.strong, bold=true, fg=#569CD6
 @text.title, bold=true, fg=#569CD6
-@text.underline, fg=#D7BA7D, underline=true
-@text.uri, fg=#D4D4D4
-@text.warning, bold=true, fg=#D7BA7D
+@text.underline, underline=true
+@text.uri, fg=#CCCCCC
+@text.warning, fg=#6A9955
 @textReference, fg=#CE9178
 @type, fg=#4EC9B0
-@type.builtin, fg=#569CD6
-@type.builtin.tsx, fg=#4EC9B0
-@type.builtin.typescript, fg=#4EC9B0
+@type.builtin, fg=#4EC9B0
+@type.builtin.c, fg=#569CD6
+@type.builtin.c_sharp, fg=#569CD6
+@type.builtin.cpp, fg=#569CD6
+@type.css, fg=#D7BA7D
 @type.qualifier, fg=#569CD6
+@type.scss, fg=#D7BA7D
 @variable, fg=#9CDCFE
 @variable.builtin, fg=#569CD6
+@variable.css, fg=#9CDCFE
 @variable.member, fg=#9CDCFE
 @variable.parameter, fg=#9CDCFE
 @variable.parameter.reference, fg=#9CDCFE
-BlinkCmpDoc, bg=#202020
-BlinkCmpDocBorder, bg=#202020
+@variable.scss, fg=#9CDCFE
+BlinkCmpDoc, bg=#202020, fg=#CCCCCC
+BlinkCmpDocBorder, bg=#202020, fg=#424242
 BlinkCmpDocCursorLine, bg=#264F78
-BlinkCmpDocSeparator, bg=#202020
-BlinkCmpGhostText, fg=#707070
-BlinkCmpKind, fg=#BBBBBB
-BlinkCmpKindClass, fg=#F28B25
-BlinkCmpKindColor, fg=#CE9178
-BlinkCmpKindConstant, fg=#4FC1FF
-BlinkCmpKindConstructor, fg=#F28B25
-BlinkCmpKindCopilot, fg=#4EC9B0
-BlinkCmpKindEnum, fg=#F28B25
-BlinkCmpKindEnumMember, fg=#9CDCFE
-BlinkCmpKindEvent, fg=#FFD602
-BlinkCmpKindField, fg=#9CDCFE
-BlinkCmpKindFile, fg=#D4D4D4
-BlinkCmpKindFolder, fg=#569CD6
-BlinkCmpKindFunction, fg=#C586C0
-BlinkCmpKindInterface, fg=#9CDCFE
-BlinkCmpKindKeyword, fg=#FFD602
-BlinkCmpKindMethod, fg=#C586C0
-BlinkCmpKindModule, fg=#F28B25
-BlinkCmpKindOperator, fg=#D4D4D4
-BlinkCmpKindProperty, fg=#9CDCFE
-BlinkCmpKindReference, fg=#9CDCFE
-BlinkCmpKindSnippet, fg=#FFD602
-BlinkCmpKindStruct, fg=#9CDCFE
-BlinkCmpKindText, fg=#BBBBBB
-BlinkCmpKindTypeParameter, fg=#9CDCFE
-BlinkCmpKindUnit, fg=#9CDCFE
-BlinkCmpKindValue, fg=#9CDCFE
-BlinkCmpKindVariable, fg=#9CDCFE
-BlinkCmpLabel, fg=#D4D4D4
-BlinkCmpLabelDescription, fg=#BBBBBB
-BlinkCmpLabelDetail, fg=#BBBBBB
-BlinkCmpLabelMatch, bold=true, fg=#18A2FE
-BlinkCmpMenu, bg=#202020, fg=#BBBBBB
-BlinkCmpMenuBorder, bg=#202020
-BlinkCmpMenuSelection, bg=#04395E, fg=#BBBBBB
-BlinkCmpScrollBarGutter, bg=#343B41
-BlinkCmpScrollBarThumb, bg=#BBBBBB
-BlinkCmpSignatureHelp, bg=#202020
-BlinkCmpSignatureHelpActiveParameter, bg=#264F78
-BlinkCmpSignatureHelpBorder, bg=#202020
-BlinkCmpSource, fg=#BBBBBB
+BlinkCmpDocSeparator, bg=#202020, fg=#424242
+BlinkCmpGhostText, fg=#6B6B6B
+BlinkCmpKind, fg=#CCCCCC
+BlinkCmpKindClass, fg=#EE9D28
+BlinkCmpKindColor, fg=#CCCCCC
+BlinkCmpKindConstant, fg=#CCCCCC
+BlinkCmpKindConstructor, fg=#B180D7
+BlinkCmpKindCopilot, fg=#CCCCCC
+BlinkCmpKindEnum, fg=#EE9D28
+BlinkCmpKindEnumMember, fg=#75BEFF
+BlinkCmpKindEvent, fg=#EE9D28
+BlinkCmpKindField, fg=#75BEFF
+BlinkCmpKindFile, fg=#CCCCCC
+BlinkCmpKindFolder, fg=#CCCCCC
+BlinkCmpKindFunction, fg=#B180D7
+BlinkCmpKindInterface, fg=#75BEFF
+BlinkCmpKindKeyword, fg=#CCCCCC
+BlinkCmpKindMethod, fg=#B180D7
+BlinkCmpKindModule, fg=#CCCCCC
+BlinkCmpKindOperator, fg=#CCCCCC
+BlinkCmpKindProperty, fg=#CCCCCC
+BlinkCmpKindReference, fg=#CCCCCC
+BlinkCmpKindSnippet, fg=#CCCCCC
+BlinkCmpKindStruct, fg=#CCCCCC
+BlinkCmpKindText, fg=#CCCCCC
+BlinkCmpKindTypeParameter, fg=#CCCCCC
+BlinkCmpKindUnit, fg=#CCCCCC
+BlinkCmpKindValue, fg=#CCCCCC
+BlinkCmpKindVariable, fg=#75BEFF
+BlinkCmpLabel, fg=#CCCCCC
+BlinkCmpLabelDeprecated, fg=#929292, strikethrough=true
+BlinkCmpLabelDescription, fg=#9D9D9D
+BlinkCmpLabelDetail, fg=#9D9D9D
+BlinkCmpLabelMatch, bold=true, fg=#2AAAFF
+BlinkCmpMenu, bg=#202020, fg=#CCCCCC
+BlinkCmpMenuBorder, bg=#202020, fg=#424242
+BlinkCmpMenuSelection, bg=#04395E, fg=#FFFFFF
+BlinkCmpScrollBarGutter, bg=#202020
+BlinkCmpScrollBarThumb, bg=#444444
+BlinkCmpSignatureHelp, bg=#202020, fg=#CCCCCC
+BlinkCmpSignatureHelpActiveParameter, bold=true, fg=#2AAAFF
+BlinkCmpSignatureHelpBorder, bg=#202020, fg=#424242
+BlinkCmpSource, fg=#9D9D9D
 Boolean, fg=#569CD6
-BufferCurrent, bg=#1F1F1F, fg=#D4D4D4
-BufferCurrentIndex, bg=#1F1F1F, fg=#D4D4D4
-BufferCurrentMod, bg=#1F1F1F, fg=#D7BA7D
-BufferCurrentSign, bg=#1F1F1F, fg=#D4D4D4
-BufferCurrentTarget, bg=#1F1F1F, fg=#F44747
-BufferInactive, bg=#2D2D2D, fg=#808080
-BufferInactiveIndex, bg=#2D2D2D, fg=#808080
-BufferInactiveMod, bg=#2D2D2D, fg=#D7BA7D
-BufferInactiveSign, bg=#2D2D2D, fg=#808080
-BufferInactiveTarget, bg=#2D2D2D, fg=#F44747
-BufferLineFill, bg=#252526
-BufferLineIndicatorSelected, fg=#252526
-BufferTabpage, bg=#2D2D2D, fg=#D4D4D4
-BufferTabpageFill, bg=#2D2D2D, fg=#D4D4D4
-BufferTabpages, bg=#2D2D2D, fg=#D4D4D4
-BufferTabpagesFill, bg=#2D2D2D, fg=#D4D4D4
-BufferVisible, bg=#1F1F1F, fg=#808080
-BufferVisibleIndex, bg=#1F1F1F, fg=#808080
-BufferVisibleMod, bg=#1F1F1F, fg=#D7BA7D
-BufferVisibleSign, bg=#1F1F1F, fg=#808080
-BufferVisibleTarget, bg=#1F1F1F, fg=#F44747
+BufferCurrent, bg=#1F1F1F, fg=#FFFFFF
+BufferCurrentIndex, bg=#1F1F1F, fg=#FFFFFF
+BufferCurrentMod, bg=#1F1F1F, fg=#E2C08D
+BufferCurrentSign, bg=#1F1F1F, fg=#0078D4
+BufferCurrentTarget, bg=#1F1F1F, fg=#F14C4C
+BufferInactive, bg=#181818, fg=#9D9D9D
+BufferInactiveIndex, bg=#181818, fg=#9D9D9D
+BufferInactiveMod, bg=#181818, fg=#E2C08D
+BufferInactiveSign, bg=#181818, fg=#9D9D9D
+BufferInactiveTarget, bg=#181818, fg=#F14C4C
+BufferLineFill, bg=#181818
+BufferLineIndicatorSelected, fg=#0078D4
+BufferTabpage, bg=#181818, fg=#9D9D9D
+BufferTabpageFill, bg=#181818, fg=#9D9D9D
+BufferTabpages, bg=#181818, fg=#9D9D9D
+BufferTabpagesFill, bg=#181818, fg=#9D9D9D
+BufferVisible, bg=#1F1F1F, fg=#9D9D9D
+BufferVisibleIndex, bg=#1F1F1F, fg=#9D9D9D
+BufferVisibleMod, bg=#1F1F1F, fg=#E2C08D
+BufferVisibleSign, bg=#1F1F1F, fg=#9D9D9D
+BufferVisibleTarget, bg=#1F1F1F, fg=#F14C4C
 Character, fg=#CE9178
-CmpItemAbbr, fg=#D4D4D4
-CmpItemAbbrDeprecated, bg=#202020, fg=#51504F, strikethrough=true
-CmpItemAbbrMatch, bold=true, fg=#18A2FE
-CmpItemAbbrMatchFuzzy, bold=true, fg=#18A2FE
-CmpItemKind, bg=#202020, fg=#BBBBBB
-CmpItemKindClass, fg=#F28B25
-CmpItemKindColor, fg=#CE9178
-CmpItemKindConstant, fg=#4FC1FF
-CmpItemKindConstructor, fg=#F28B25
-CmpItemKindEnum, fg=#9CDCFE
-CmpItemKindEnumMember, fg=#9CDCFE
-CmpItemKindEvent, fg=#4FC1FF
-CmpItemKindField, fg=#9CDCFE
-CmpItemKindFile, fg=#D4D4D4
-CmpItemKindFolder, fg=#D4D4D4
-CmpItemKindFunction, fg=#C586C0
-CmpItemKindInterface, fg=#9CDCFE
-CmpItemKindKeyword, fg=#D4D4D4
-CmpItemKindMethod, fg=#C586C0
-CmpItemKindModule, fg=#D4D4D4
-CmpItemKindOperator, fg=#D4D4D4
-CmpItemKindProperty, fg=#D4D4D4
-CmpItemKindReference, fg=#9CDCFE
-CmpItemKindSnippet, fg=#D4D4D4
-CmpItemKindStruct, fg=#9CDCFE
-CmpItemKindText, fg=#9CDCFE
-CmpItemKindTypeParameter, fg=#9CDCFE
-CmpItemKindUnit, fg=#D4D4D4
-CmpItemKindValue, fg=#9CDCFE
-CmpItemKindVariable, fg=#9CDCFE
-CmpItemMenu, fg=#BBBBBB
-CocFloating, bg=#202020
-CocHighlightRead, bg=#343B41
-CocHighlightText, bg=#343B41
-CocHighlightWrite, bg=#343B41
-CocMenuSel, bg=#04395E, fg=#BBBBBB
-CocSearch, fg=#18A2FE
-ColorColumn, bg=#222222
+CmpGhostText, fg=#6B6B6B
+CmpItemAbbr, fg=#CCCCCC
+CmpItemAbbrDeprecated, fg=#929292, strikethrough=true
+CmpItemAbbrMatch, bold=true, fg=#2AAAFF
+CmpItemAbbrMatchFuzzy, bold=true, fg=#2AAAFF
+CmpItemKind, bg=#202020, fg=#CCCCCC
+CmpItemKindClass, fg=#EE9D28
+CmpItemKindColor, fg=#CCCCCC
+CmpItemKindConstant, fg=#CCCCCC
+CmpItemKindConstructor, fg=#B180D7
+CmpItemKindEnum, fg=#EE9D28
+CmpItemKindEnumMember, fg=#75BEFF
+CmpItemKindEvent, fg=#EE9D28
+CmpItemKindField, fg=#75BEFF
+CmpItemKindFile, fg=#CCCCCC
+CmpItemKindFolder, fg=#CCCCCC
+CmpItemKindFunction, fg=#B180D7
+CmpItemKindInterface, fg=#75BEFF
+CmpItemKindKeyword, fg=#CCCCCC
+CmpItemKindMethod, fg=#B180D7
+CmpItemKindModule, fg=#CCCCCC
+CmpItemKindOperator, fg=#CCCCCC
+CmpItemKindProperty, fg=#CCCCCC
+CmpItemKindReference, fg=#CCCCCC
+CmpItemKindSnippet, fg=#CCCCCC
+CmpItemKindStruct, fg=#CCCCCC
+CmpItemKindText, fg=#CCCCCC
+CmpItemKindTypeParameter, fg=#CCCCCC
+CmpItemKindUnit, fg=#CCCCCC
+CmpItemKindValue, fg=#CCCCCC
+CmpItemKindVariable, fg=#75BEFF
+CmpItemMenu, fg=#9D9D9D
+CocFloating, bg=#202020, fg=#CCCCCC
+CocHighlightRead, bg=#474747
+CocHighlightText, bg=#474747
+CocHighlightWrite, bg=#093D5B
+CocMenuSel, bg=#04395E, fg=#FFFFFF
+CocSearch, bold=true, fg=#2AAAFF
+ColorColumn, bg=#282828
 Comment, fg=#6A9955
-CompeDocumentation, bg=#202020, fg=#BBBBBB
-CompeDocumentationBorder, bg=#202020, fg=#BBBBBB
+CompeDocumentation, bg=#202020, fg=#CCCCCC
+CompeDocumentationBorder, bg=#202020, fg=#CCCCCC
 CompileModeCheckResult, bold=true, fg=#FF9966
 CompileModeCheckTarget, fg=#FF9966
 CompileModeCommandOutput, fg=#6699FF
@@ -236,14 +274,15 @@ CompileModeMessageCol, fg=#4EC9B0
 CompileModeMessageRow, fg=#C586C0
 CompileModeOutputFile, fg=#9966CC
 CompileModeWarning, fg=#DCDCAA
-Conceal, bg=#1F1F1F, fg=#D4D4D4
+Conceal, bg=#1F1F1F, fg=#CCCCCC
 Conditional, fg=#C586C0
 Constant, fg=#569CD6
-CopilotSuggestion, fg=#6A6A6A
-Cursor, bg=#AEAFAD, fg=#51504F
-CursorColumn, bg=#222222
-CursorLine, bg=#222222
-CursorLineNr, bg=#1F1F1F, fg=#BBBBBB
+CopilotSuggestion, fg=#6B6B6B
+CurSearch, bg=#9E6A03
+Cursor, bg=#AEAFAD, fg=#1F1F1F
+CursorColumn, bg=#282828
+CursorLine, bg=#282828
+CursorLineNr, bg=#1F1F1F, fg=#CCCCCC
 DapUIBreakpointsCurrentLine, bold=true, fg=#4EC9B0
 DapUIBreakpointsDisabledLine, fg=#51504F
 DapUIBreakpointsInfo, fg=#4EC9B0
@@ -251,7 +290,7 @@ DapUIBreakpointsLine, fg=#C586C0
 DapUIBreakpointsPath, fg=#C586C0
 DapUICurrentFrameName, bold=true, fg=#4EC9B0
 DapUIDecoration, fg=#C586C0
-DapUIFloatBorder, fg=#C586C0
+DapUIFloatBorder, fg=#424242
 DapUILineNumber, fg=#C586C0
 DapUIModifiedValue, bold=true, fg=#C586C0
 DapUIPlayPause, fg=#4EC9B0
@@ -283,128 +322,135 @@ DashboardDesc, fg=#D7BA7D
 DashboardFooter, fg=#569CD6, italic=true
 DashboardHeader, fg=#569CD6
 DashboardIcon, fg=#D7BA7D
-DashboardKey, fg=#D4D4D4
+DashboardKey, fg=#CCCCCC
 DashboardShortCut, fg=#C586C0
-Debug, fg=#D4D4D4
+Debug, fg=#CCCCCC
 Define, fg=#C586C0
-Delimiter, fg=#D4D4D4
-DiagnosticError, fg=#F44747
-DiagnosticHint, fg=#569CD6
-DiagnosticInfo, fg=#569CD6
+Delimiter, fg=#CCCCCC
+DiagnosticDeprecated, strikethrough=true
+DiagnosticError, fg=#F14C4C
+DiagnosticHint, fg=#B0B0B0
+DiagnosticInfo, fg=#59A4F9
 DiagnosticOk, fg=#4EC9B0
-DiagnosticUnderlineError, sp=#F44747, undercurl=true
-DiagnosticUnderlineHint, sp=#569CD6, undercurl=true
-DiagnosticUnderlineInfo, sp=#569CD6, undercurl=true
-DiagnosticUnderlineWarn, sp=#DCDCAA, undercurl=true
-DiagnosticUnnecessary, fg=#729DB3
-DiagnosticWarn, fg=#DCDCAA
-DiffAdd, bg=#4B5632
-DiffChange, bg=#4B1818
-DiffDelete, bg=#6F1313
-DiffText, bg=#6F1313
+DiagnosticUnderlineError, sp=#F14C4C, undercurl=true
+DiagnosticUnderlineHint, sp=#B0B0B0, underdotted=true
+DiagnosticUnderlineInfo, sp=#59A4F9, undercurl=true
+DiagnosticUnderlineWarn, sp=#CCA700, undercurl=true
+DiagnosticUnnecessary, fg=#929292
+DiagnosticWarn, fg=#CCA700
+DiffAdd, bg=#383E2A
+DiffChange, bg=#383E2A
+DiffDelete, bg=#4C1919
+DiffText, bg=#4C5A2A
 Directory, bg=#1F1F1F, fg=#569CD6
 EndOfBuffer, fg=#1F1F1F
 Error, bg=#1F1F1F, fg=#F44747, sp=#F44747, undercurl=true
-ErrorMsg, bg=#1F1F1F, fg=#F44747
+ErrorMsg, bg=#1F1F1F, fg=#F85149
 Exception, fg=#C586C0
 Float, fg=#B5CEA8
-FocusedSymbol, bg=#084671, fg=#FFFFFF
-FoldColumn, bg=#1F1F1F, fg=#5A5A5A
-Folded, bg=#202D39
+FloatBorder, bg=#202020, fg=#424242
+FloatTitle, bg=#202020, bold=true, fg=#CCCCCC
+FocusedSymbol, bg=#04395E, fg=#FFFFFF
+FoldColumn, bg=#1F1F1F, fg=#6E7681
+Folded, bg=#212D3A
 Function, fg=#DCDCAA
-GitGutterAdd, fg=#6A9955
-GitGutterChange, fg=#DCDCAA
-GitGutterDelete, fg=#F44747
-GitSignsAdd, fg=#6A9955
-GitSignsAddLn, bg=#6A9955, fg=#1F1F1F
-GitSignsChange, fg=#DCDCAA
-GitSignsChangeLn, bg=#DCDCAA, fg=#1F1F1F
-GitSignsDelete, fg=#F44747
-GitSignsDeleteLn, bg=#F44747, fg=#1F1F1F
+GitGutterAdd, fg=#2EA043
+GitGutterChange, fg=#0078D4
+GitGutterDelete, fg=#F85149
+GitSignsAdd, fg=#2EA043
+GitSignsAddLn, bg=#383E2A
+GitSignsChange, fg=#0078D4
+GitSignsChangeLn, bg=#383E2A
+GitSignsDelete, fg=#F85149
+GitSignsDeleteLn, bg=#4C1919
 IblIndent, fg=#404040, nocombine=true
 IblScope, fg=#707070, nocombine=true
 IblWhitespace, fg=#404040, nocombine=true
 Identifier, fg=#9CDCFE
-Ignore, fg=#D4D4D4
-IlluminatedWordRead, bg=#343B41
-IlluminatedWordText, bg=#343B41
-IlluminatedWordWrite, bg=#343B41
-IncSearch, bg=#515C6A
+Ignore, fg=#CCCCCC
+IlluminatedWordRead, bg=#474747
+IlluminatedWordText, bg=#474747
+IlluminatedWordWrite, bg=#093D5B
+IncSearch, bg=#9E6A03
 Include, fg=#C586C0
 Keyword, fg=#C586C0
-LSPSagaDiagnosticTruncateLine, fg=#5A5A5A
+LSPSagaDiagnosticTruncateLine, fg=#424242
 Label, fg=#C586C0
-LineNr, bg=#1F1F1F, fg=#5A5A5A
-LspFloatWinBorder, fg=#5A5A5A
-LspFloatWinNormal, fg=#D4D4D4
-LspInfoBorder, fg=#5A5A5A
-LspInlayHint, fg=#6A6A6A
-LspLinesDiagBorder, fg=#5A5A5A
-LspReferenceRead, bg=#343B41
-LspReferenceText, bg=#343B41
-LspReferenceWrite, bg=#343B41
-LspSagaBorderTitle, fg=#51504F
-LspSagaCodeActionBorder, fg=#5A5A5A
-LspSagaDefPreviewBorder, fg=#5A5A5A
-LspSagaDiagnosticBorder, fg=#5A5A5A
-LspSagaDocTruncateLine, fg=#5A5A5A
-LspSagaHoverBorder, fg=#5A5A5A
-LspSagaLspFinderBorder, fg=#5A5A5A
-LspSagaRenameBorder, fg=#5A5A5A
-LspSagaShTruncateLine, fg=#5A5A5A
-LspSagaSignatureHelpBorder, fg=#5A5A5A
-Macro, fg=#C586C0
-MatchParen, bg=#51504F
+LineNr, bg=#1F1F1F, fg=#6E7681
+LspCodeLens, fg=#999999
+LspCodeLensSeparator, fg=#999999
+LspFloatWinBorder, fg=#424242
+LspFloatWinNormal, fg=#CCCCCC
+LspInfoBorder, fg=#424242
+LspInlayHint, bg=#262626, fg=#969696
+LspLinesDiagBorder, fg=#424242
+LspReferenceRead, bg=#474747
+LspReferenceText, bg=#474747
+LspReferenceWrite, bg=#093D5B
+LspSagaBorderTitle, fg=#CCCCCC
+LspSagaCodeActionBorder, fg=#424242
+LspSagaDefPreviewBorder, fg=#424242
+LspSagaDiagnosticBorder, fg=#424242
+LspSagaDocTruncateLine, fg=#424242
+LspSagaHoverBorder, fg=#424242
+LspSagaLspFinderBorder, fg=#424242
+LspSagaRenameBorder, fg=#424242
+LspSagaShTruncateLine, fg=#424242
+LspSagaSignatureHelpBorder, fg=#424242
+LspSignatureActiveParameter, bold=true, fg=#2AAAFF
+Macro, fg=#569CD6
+MatchParen, bg=#1C261C, sp=#888888, underline=true
 MiniIconsAzure, fg=#569CD6
 MiniIconsBlue, fg=#18A2FE
 MiniIconsCyan, fg=#4EC9B0
 MiniIconsGreen, fg=#6A9955
-MiniIconsGrey, fg=#D4D4D4
+MiniIconsGrey, fg=#CCCCCC
 MiniIconsOrange, fg=#F44747
 MiniIconsPurple, fg=#C586C0
 MiniIconsRed, fg=#F44747
 MiniIconsYellow, fg=#FFD602
-MiniStatuslineDevinfo, bg=#636369
-MiniStatuslineFileinfo, bg=#636369
-MiniStatuslineFilename, bg=#373737, fg=#D4D4D4
-MiniStatuslineInactive, bg=#252526, fg=#D4D4D4
+MiniStatuslineDevinfo, bg=#2B2B2B, fg=#CCCCCC
+MiniStatuslineFileinfo, bg=#2B2B2B, fg=#CCCCCC
+MiniStatuslineFilename, bg=#181818, fg=#CCCCCC
+MiniStatuslineInactive, bg=#1F1F1F, fg=#9D9D9D
 MiniStatuslineModeCommand, bg=#D16969, bold=true, fg=#1F1F1F
 MiniStatuslineModeInsert, bg=#9CDCFE, bold=true, fg=#1F1F1F
-MiniStatuslineModeNormal, bg=#B5CEA8, bold=true, fg=#1F1F1F
-MiniStatuslineModeOther, bg=#252526, fg=#D4D4D4
+MiniStatuslineModeNormal, bg=#0078D4, bold=true, fg=#FFFFFF
+MiniStatuslineModeOther, bg=#0078D4, bold=true, fg=#FFFFFF
 MiniStatuslineModeReplace, bg=#D7BA7D, bold=true, fg=#1F1F1F
 MiniStatuslineModeVisual, bg=#C586C0, bold=true, fg=#1F1F1F
-ModeMsg, bg=#252526, fg=#D4D4D4
-MoreMsg, bg=#252526, fg=#D4D4D4
-NeoTreeBufferNumber, fg=#5A5A5A
-NeoTreeCursorLine, bg=#222222
-NeoTreeDimText, bg=#222222
+ModeMsg, bg=#202020, fg=#CCCCCC
+MoreMsg, bg=#202020, fg=#CCCCCC
+NeoTreeBufferNumber, fg=#6E7681
+NeoTreeCursorLine, bg=#2A2D2E
+NeoTreeDimText, fg=#9D9D9D
 NeoTreeDirectoryIcon, fg=#569CD6
-NeoTreeDirectoryName, fg=#D4D4D4
+NeoTreeDirectoryName, fg=#CCCCCC
 NeoTreeDotfile, fg=#729DB3
 NeoTreeFileIcon, fg=#646695
-NeoTreeFileName, fg=#D4D4D4
-NeoTreeFileNameOpened, bg=#222222, fg=#D4D4D4
-NeoTreeFilterTerm, fg=#D4D4D4
-NeoTreeFloatBorder, fg=#5A5A5A
-NeoTreeFloatTitle, fg=#5A5A5A
-NeoTreeTitleBar, fg=#5A5A5A
-NeogitDiffAdd, bg=#373D29, fg=#81B88B
-NeogitDiffAddCursor, bg=#4B5632, fg=#81B88B
-NeogitDiffAddHighlight, bg=#4B5632, fg=#81B88B
-NeogitDiffContext, bg=#252526, fg=#BBBBBB
-NeogitDiffContextCursor, bg=#373737, fg=#BBBBBB
-NeogitDiffContextHighlight, bg=#373737, fg=#BBBBBB
-NeogitDiffDelete, bg=#4B1818, fg=#C74E39
-NeogitDiffDeleteCursor, bg=#6F1313, fg=#C74E39
-NeogitDiffDeleteHighlight, bg=#6F1313, fg=#C74E39
-NeogitDiffHeader, bg=#1F1F1F, fg=#898989
-NeogitDiffHeaderHighlight, bg=#1F1F1F, fg=#898989
-NeogitHunkHeader, bg=#252526, fg=#E2C08D
-NeogitHunkHeaderCursor, bg=#373737, fg=#E2C08D
-NeogitHunkHeaderHighlight, bg=#373737, fg=#E2C08D
-NeogitWinSeparator, bg=#1F1F1F, fg=#444444
-NeotestAdapterName, bold=true, fg=#D4D4D4
+NeoTreeFileName, fg=#CCCCCC
+NeoTreeFileNameOpened, bold=true, fg=#CCCCCC
+NeoTreeFilterTerm, bold=true, fg=#2AAAFF
+NeoTreeFloatBorder, bg=#202020, fg=#424242
+NeoTreeFloatTitle, bg=#202020, bold=true, fg=#CCCCCC
+NeoTreeIndentMarker, fg=#404040
+NeoTreeTitleBar, bg=#202020, bold=true, fg=#CCCCCC
+NeogitDiffAdd, bg=#383E2A, fg=#81B88B
+NeogitDiffAddCursor, bg=#4C5A2A, fg=#81B88B
+NeogitDiffAddHighlight, bg=#4C5A2A, fg=#81B88B
+NeogitDiffContext, bg=#181818, fg=#CCCCCC
+NeogitDiffContextCursor, bg=#282828, fg=#CCCCCC
+NeogitDiffContextHighlight, bg=#282828, fg=#CCCCCC
+NeogitDiffDelete, bg=#4C1919, fg=#C74E39
+NeogitDiffDeleteCursor, bg=#701414, fg=#C74E39
+NeogitDiffDeleteHighlight, bg=#701414, fg=#C74E39
+NeogitDiffHeader, bg=#1F1F1F, fg=#9D9D9D
+NeogitDiffHeaderHighlight, bg=#1F1F1F, fg=#9D9D9D
+NeogitHunkHeader, bg=#181818, fg=#E2C08D
+NeogitHunkHeaderCursor, bg=#282828, fg=#E2C08D
+NeogitHunkHeaderHighlight, bg=#282828, fg=#E2C08D
+NeogitWinSeparator, bg=#1F1F1F, fg=#333333
+NeotestAdapterName, bold=true, fg=#CCCCCC
 NeotestDir, fg=#569CD6
 NeotestExpandMarker, fg=#51504F
 NeotestFailed, fg=#F44747
@@ -419,106 +465,109 @@ NeotestSkipped, fg=#569CD6
 NeotestTarget, fg=#D16969
 NeotestWatching, fg=#FFD602
 NeotestWinSelect, bold=true, fg=#569CD6
-NonText, fg=#5A5A5A
-Normal, bg=#1F1F1F, fg=#D4D4D4
-NormalFloat, bg=#202020
+NonText, fg=#3F3F3E
+Normal, bg=#1F1F1F, fg=#CCCCCC
+NormalFloat, bg=#202020, fg=#CCCCCC
 Number, fg=#B5CEA8
-NvimTreeCursorLine, bg=#373737
-NvimTreeEmptyFolderName, fg=#808080
-NvimTreeEndOfBuffer, fg=#252526
+NvimTreeCursorLine, bg=#2A2D2E
+NvimTreeEmptyFolderName, fg=#CCCCCC
+NvimTreeEndOfBuffer, fg=#181818
 NvimTreeFolderIcon, fg=#569CD6
-NvimTreeFolderName, fg=#D4D4D4
+NvimTreeFolderName, fg=#CCCCCC
 NvimTreeGitDeleted, fg=#C74E39
 NvimTreeGitDirty, fg=#E2C08D
 NvimTreeGitIgnored, fg=#8C8C8C
-NvimTreeGitMerge, fg=#73C991
-NvimTreeGitNew, fg=#81B88B
+NvimTreeGitMerge, fg=#E4676B
+NvimTreeGitNew, fg=#73C991
 NvimTreeGitRenamed, fg=#73C991
 NvimTreeGitStaged, fg=#E2C08D
 NvimTreeImageFile, fg=#646695
-NvimTreeIndentMarker, fg=#5A5A5A
-NvimTreeNormal, bg=#252526, fg=#D4D4D4
-NvimTreeOpenedFolderName, bg=#252526
-NvimTreeRootFolder, bold=true, fg=#D4D4D4
+NvimTreeIndentMarker, fg=#404040
+NvimTreeNormal, bg=#181818, fg=#CCCCCC
+NvimTreeOpenedFolderName, bg=#181818
+NvimTreeRootFolder, bold=true, fg=#CCCCCC
 NvimTreeSpecialFile, fg=#C586C0, underline=true
-NvimTreeVertSplit, bg=#1F1F1F, fg=#1F1F1F
+NvimTreeVertSplit, bg=#1F1F1F, fg=#2B2B2B
 Operator, fg=#D4D4D4
-Pmenu, bg=#202020, fg=#BBBBBB
-PmenuSbar, bg=#343B41
-PmenuSel, bg=#04395E, fg=#BBBBBB
-PmenuThumb, bg=#BBBBBB
+Pmenu, bg=#202020, fg=#CCCCCC
+PmenuMatch, bold=true, fg=#2AAAFF
+PmenuMatchSel, bold=true, fg=#2AAAFF
+PmenuSbar, bg=#202020
+PmenuSel, bg=#04395E, fg=#FFFFFF
+PmenuThumb, bg=#444444
 PreProc, fg=#C586C0
 Question, bg=#1F1F1F, fg=#569CD6
 QuickFixLine, bold=true
-RainbowDelimiterBlue, fg=#18A2FE
-RainbowDelimiterCyan, fg=#4EC9B0
-RainbowDelimiterGreen, fg=#6A9955
-RainbowDelimiterOrange, fg=#CE9178
-RainbowDelimiterRed, fg=#C586C0
-RainbowDelimiterViolet, fg=#646695
-RainbowDelimiterYellow, fg=#D7BA7D
+RainbowDelimiterBlue, fg=#179FFF
+RainbowDelimiterCyan, fg=#FFD700
+RainbowDelimiterGreen, fg=#DA70D6
+RainbowDelimiterOrange, fg=#FFD700
+RainbowDelimiterRed, fg=#FFD700
+RainbowDelimiterViolet, fg=#179FFF
+RainbowDelimiterYellow, fg=#DA70D6
 RenderMarkdownH1, bold=true, fg=#569CD6
-RenderMarkdownH1Bg, bg=#343B41, bold=true
-RenderMarkdownH2, bold=true, fg=#CE9178
-RenderMarkdownH2Bg, bg=#343B41, bold=true
-RenderMarkdownH3, bold=true, fg=#DCDCAA
-RenderMarkdownH3Bg, bg=#343B41, bold=true
-RenderMarkdownH4, bold=true, fg=#6A9955
-RenderMarkdownH4Bg, bg=#343B41, bold=true
+RenderMarkdownH1Bg, bg=#1F1F1F, bold=true
+RenderMarkdownH2, bold=true, fg=#569CD6
+RenderMarkdownH2Bg, bg=#1F1F1F, bold=true
+RenderMarkdownH3, bold=true, fg=#569CD6
+RenderMarkdownH3Bg, bg=#1F1F1F, bold=true
+RenderMarkdownH4, bold=true, fg=#569CD6
+RenderMarkdownH4Bg, bg=#1F1F1F, bold=true
 RenderMarkdownH5, bold=true, fg=#569CD6
-RenderMarkdownH5Bg, bg=#343B41, bold=true
-RenderMarkdownH6, bold=true, fg=#C586C0
-RenderMarkdownH6Bg, bg=#343B41, bold=true
+RenderMarkdownH5Bg, bg=#1F1F1F, bold=true
+RenderMarkdownH6, bold=true, fg=#569CD6
+RenderMarkdownH6Bg, bg=#1F1F1F, bold=true
 Repeat, fg=#C586C0
-Search, bg=#613315
+Search, bg=#633315
 SignColumn, bg=#1F1F1F
 SnacksIndent, fg=#404040, nocombine=true
 SnacksIndentScope, fg=#707070, nocombine=true
-SnacksPicker, bg=#1F1F1F, fg=#D4D4D4
-SnacksPickerBorder, bg=#1F1F1F, fg=#D4D4D4
+SnacksPicker, bg=#1F1F1F, fg=#CCCCCC
+SnacksPickerBorder, bg=#1F1F1F, fg=#424242
 SnacksPickerDir, nocombine=true
 SnacksPickerDirectory, nocombine=true
-SnacksPickerListCursorLine, bg=#04395E, fg=#BBBBBB
+SnacksPickerListCursorLine, bg=#04395E, fg=#FFFFFF
+SnacksPickerMatch, bold=true, fg=#2AAAFF
 SnacksPickerPreviewCursorLine, nocombine=true
 Special, fg=#D7BA7D
-SpecialChar, fg=#D4D4D4
+SpecialChar, fg=#CCCCCC
 SpecialComment, fg=#6A9955
 SpecialKey, fg=#569CD6
-SpellBad, sp=#F44747, undercurl=true
-SpellCap, sp=#DCDCAA, undercurl=true
-SpellLocal, sp=#569CD6, undercurl=true
+SpellBad, sp=#F14C4C, undercurl=true
+SpellCap, sp=#CCA700, undercurl=true
+SpellLocal, sp=#59A4F9, undercurl=true
 SpellRare, sp=#646695, undercurl=true
 Statement, fg=#C586C0
-StatusLine, bg=#373737, fg=#D4D4D4
-StatusLineNC, bg=#252526, fg=#D4D4D4
+StatusLine, bg=#181818, fg=#CCCCCC
+StatusLineNC, bg=#1F1F1F, fg=#9D9D9D
 StorageClass, fg=#569CD6
 String, fg=#CE9178
 Structure, fg=#4EC9B0
-SymbolsOutlineConnector, fg=#5A5A5A
-TabLine, bg=#2D2D2D, fg=#D4D4D4
-TabLineFill, bg=#252526, fg=#D4D4D4
-TabLineSel, bg=#1F1F1F, fg=#D4D4D4
-Tag, fg=#D4D4D4
-TelescopeMatching, bold=true, fg=#18A2FE
-TelescopeMultiSelection, bg=#04395E, fg=#D4D4D4
-TelescopeNormal, fg=#D4D4D4
-TelescopePreviewBorder, fg=#5A5A5A
-TelescopePromptBorder, fg=#5A5A5A
-TelescopePromptPrefix, fg=#D4D4D4
-TelescopeResultsBorder, fg=#5A5A5A
-TelescopeSelection, bg=#04395E, fg=#D4D4D4
+SymbolsOutlineConnector, fg=#404040
+TabLine, bg=#181818, fg=#9D9D9D
+TabLineFill, bg=#181818, fg=#9D9D9D
+TabLineSel, bg=#1F1F1F, fg=#FFFFFF
+Tag, fg=#CCCCCC
+TelescopeMatching, bold=true, fg=#2AAAFF
+TelescopeMultiSelection, bg=#04395E, fg=#FFFFFF
+TelescopeNormal, fg=#CCCCCC
+TelescopePreviewBorder, fg=#424242
+TelescopePromptBorder, fg=#424242
+TelescopePromptPrefix, fg=#CCCCCC
+TelescopeResultsBorder, fg=#424242
+TelescopeSelection, bg=#04395E, fg=#FFFFFF
 Title, bold=true
-Todo, bg=#1F1F1F, bold=true, fg=#D7BA7D
-TroubleNormal, bg=#1F1F1F, fg=#D4D4D4
-TroubleNormalNC, bg=#1F1F1F, fg=#D4D4D4
+Todo, fg=#6A9955
+TroubleNormal, bg=#1F1F1F, fg=#CCCCCC
+TroubleNormalNC, bg=#1F1F1F, fg=#CCCCCC
 Type, fg=#569CD6
 Typedef, fg=#569CD6
 Underlined, underline=true
-VertSplit, bg=#1F1F1F, fg=#444444
+VertSplit, bg=#1F1F1F, fg=#333333
 Visual, bg=#264F78
-VisualNOS, bg=#264F78
-WarningMsg, bg=#1F1F1F, fg=#DCDCAA
-WhichKeyBorder, fg=#5A5A5A
+VisualNOS, bg=#3A3D41
+WarningMsg, bg=#1F1F1F, fg=#CCA700
+WhichKeyBorder, fg=#424242
 WhichKeyIconAzure, fg=#4EC9B0
 WhichKeyIconBlue, fg=#569CD6
 WhichKeyIconGreen, fg=#6A9955
@@ -527,13 +576,13 @@ WhichKeyIconOrange, fg=#D7BA7D
 WhichKeyIconPurple, fg=#C586C0
 WhichKeyIconRed, fg=#F44747
 WhichKeyIconYellow, fg=#DCDCAA
-WhichKeySeparator, bg=#1F1F1F, fg=#D4D4D4
-WhichKeyValue, bg=#1F1F1F, fg=#D4D4D4
-Whitespace, fg=#5A5A5A
+WhichKeySeparator, bg=#1F1F1F, fg=#CCCCCC
+WhichKeyValue, bg=#1F1F1F, fg=#CCCCCC
+Whitespace, fg=#3F3F3E
 WildMenu, bg=#264F78
-WinBar, bg=#1F1F1F, bold=true, fg=#D4D4D4
-WinBarNc, bg=#1F1F1F, fg=#D4D4D4
-WinSeparator, bg=#1F1F1F, fg=#444444
+WinBar, bg=#1F1F1F, bold=true, fg=#CCCCCC
+WinBarNc, bg=#1F1F1F, fg=#9D9D9D
+WinSeparator, bg=#1F1F1F, fg=#333333
 asciidocAdmonition, fg=#CE9178
 asciidocAttributeEntry, fg=#D7BA7D
 asciidocAttributeList, fg=#C586C0
@@ -546,23 +595,23 @@ asciidocMacroAttributes, fg=#D7BA7D
 asciidocOneLineTitle, bold=true, fg=#569CD6
 asciidocPassthroughBlock, fg=#569CD6
 asciidocQuotedBold, bold=true, fg=#569CD6
-asciidocQuotedEmphasized, fg=#569CD6, italic=true
-asciidocQuotedEmphasized2, fg=#569CD6, italic=true
-asciidocQuotedEmphasizedItalic, fg=#569CD6, italic=true
+asciidocQuotedEmphasized, fg=#C586C0, italic=true
+asciidocQuotedEmphasized2, fg=#C586C0, italic=true
+asciidocQuotedEmphasizedItalic, fg=#C586C0, italic=true
 asciidocQuotedMonospaced, fg=#CE9178
 asciidocQuotedMonospaced2, fg=#CE9178
 asciidocQuotedUnconstrainedBold, bold=true, fg=#569CD6
-asciidocQuotedUnconstrainedEmphasized, fg=#569CD6, italic=true
+asciidocQuotedUnconstrainedEmphasized, fg=#C586C0, italic=true
 asciidocTriplePlusPassthrough, fg=#DCDCAA
-asciidocURL, fg=#D4D4D4, underline=true
+asciidocURL, fg=#CCCCCC, underline=true
 cssAttr, fg=#CE9178
 cssAttrRegion, fg=#CE9178
-cssBraces, fg=#D4D4D4
+cssBraces, fg=#CCCCCC
 cssClassName, fg=#D7BA7D
 cssColor, fg=#CE9178
 cssDefinition, fg=#9CDCFE
-cssFunction, fg=#CE9178
-cssFunctionName, fg=#CE9178
+cssFunction, fg=#DCDCAA
+cssFunctionName, fg=#DCDCAA
 cssIdentifier, fg=#D7BA7D
 cssImportant, fg=#569CD6
 cssInclude, fg=#C586C0
@@ -572,14 +621,14 @@ cssPseudoClassId, fg=#D7BA7D
 cssPseudoClassLang, fg=#D7BA7D
 cssStyle, fg=#9CDCFE
 cssTagName, fg=#D7BA7D
-cssUnitDecorators, fg=#CE9178
-cssValueLength, fg=#CE9178
-cssValueNumber, fg=#CE9178
-cssVendor, fg=#CE9178
+cssUnitDecorators, fg=#B5CEA8
+cssValueLength, fg=#B5CEA8
+cssValueNumber, fg=#B5CEA8
+cssVendor, fg=#9CDCFE
 debugPC, bg=#4C4C19
-diffAdded, bg=#4B5632
-diffChanged, bg=#4B1818
-diffRemoved, bg=#6F1313
+diffAdded, fg=#B5CEA8
+diffChanged, fg=#569CD6
+diffRemoved, fg=#CE9178
 gitcommitBlank, fg=#C586C0
 gitcommitBranch, fg=#C586C0
 gitcommitComment, fg=#808080
@@ -603,8 +652,8 @@ goImport, fg=#569CD6
 goMethodCall, fg=#DCDCAA
 goPackage, fg=#569CD6
 goPredefinedIdentifiers, fg=#569CD6
-goReceiver, fg=#D4D4D4
-goReceiverType, fg=#D4D4D4
+goReceiver, fg=#CCCCCC
+goReceiverType, fg=#CCCCCC
 goSignedInts, fg=#4EC9B0
 goSingleDecl, fg=#9CDCFE
 goStatement, fg=#C586C0
@@ -619,10 +668,11 @@ goVarDefs, fg=#9CDCFE
 htmlArg, fg=#9CDCFE
 htmlEndTag, fg=#808080
 htmlSpecialTagName, fg=#569CD6
+htmlString, fg=#CE9178
 htmlTag, fg=#808080
 htmlTagName, fg=#569CD6
-illuminatedCurWord, bg=#343B41
-illuminatedWord, bg=#343B41
+illuminatedCurWord, bg=#474747
+illuminatedWord, bg=#474747
 jsClassDefinition, fg=#4EC9B0
 jsClassKeyword, fg=#569CD6
 jsDestructuringBlock, fg=#9CDCFE
@@ -654,16 +704,26 @@ luaFuncArgName, fg=#9CDCFE
 luaFuncCall, fg=#DCDCAA
 luaFuncKeyword, fg=#C586C0
 luaLocal, fg=#C586C0
+markdownBlockquote, fg=#6A9955
 markdownBold, bold=true, fg=#569CD6
 markdownCode, fg=#CE9178
-markdownCodeDelimiter, fg=#D4D4D4
-markdownEscape, fg=#CE9178
+markdownCodeDelimiter, fg=#CCCCCC
+markdownEscape, fg=#D7BA7D
 markdownFootnote, fg=#CE9178
 markdownFootnoteDefinition, fg=#CE9178
-markdownHeadingDelimiter, fg=#569CD6
+markdownH1, bold=true, fg=#569CD6
+markdownH2, bold=true, fg=#569CD6
+markdownH3, bold=true, fg=#569CD6
+markdownH4, bold=true, fg=#569CD6
+markdownH5, bold=true, fg=#569CD6
+markdownH6, bold=true, fg=#569CD6
+markdownHeadingDelimiter, bold=true, fg=#569CD6
+markdownItalic, fg=#C586C0, italic=true
 markdownLinkText, fg=#CE9178
-markdownRule, bold=true, fg=#569CD6
-markdownUrl, fg=#D4D4D4, underline=true
+markdownListMarker, fg=#6796E6
+markdownOrderedListMarker, fg=#6796E6
+markdownRule, fg=#CCCCCC
+markdownUrl, fg=#CCCCCC, underline=true
 phpClass, fg=#4EC9B0
 phpFunction, fg=#DCDCAA
 phpInclude, fg=#569CD6
@@ -709,7 +769,7 @@ typescriptArrowFuncArg, fg=#9CDCFE
 typescriptAsyncFuncKeyword, fg=#569CD6
 typescriptBOM, fg=#9CDCFE
 typescriptBlock, fg=#9CDCFE
-typescriptBraces, fg=#D4D4D4
+typescriptBraces, fg=#CCCCCC
 typescriptCall, fg=#569CD6
 typescriptCase, fg=#9CDCFE
 typescriptCastKeyword, fg=#9CDCFE
@@ -752,7 +812,7 @@ typescriptObjectLiteral, fg=#9CDCFE
 typescriptOperator, fg=#569CD6
 typescriptParamImpl, fg=#9CDCFE
 typescriptParenExp, fg=#9CDCFE
-typescriptParens, fg=#D4D4D4
+typescriptParens, fg=#CCCCCC
 typescriptPredefinedType, fg=#4EC9B0
 typescriptPromiseMethod, fg=#DCDCAA
 typescriptReserved, fg=#C586C0
@@ -762,8 +822,11 @@ typescriptTypeParameter, fg=#4EC9B0
 typescriptTypeReference, fg=#4EC9B0
 typescriptVariable, fg=#569CD6
 typescriptVariableDeclaration, fg=#9CDCFE
+xmlAttrib, fg=#9CDCFE
 xmlEndTag, fg=#569CD6
-xmlTag, fg=#569CD6
+xmlString, fg=#CE9178
+xmlTag, fg=#808080
 xmlTagName, fg=#569CD6
+yamlBlockMappingKey, fg=#569CD6
 yamlConstant, fg=#569CD6
 yamlKey, fg=#569CD6

@@ -8,3 +8,5 @@
   "with"
 ] @keyword.conditional
 
+
+"async" @keyword.modifier
