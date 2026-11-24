@@ -98,16 +98,17 @@ require('vscode').setup({
     -- Apply theme colors to terminal
     terminal_colors = true,
 
-    -- Override colors (see ./lua/vscode/colors.lua)
+    -- Override palette colors (see ./lua/vscode/colors.lua and "Palette" below).
+    -- This replaces every use of that palette color, not one highlight group.
     color_overrides = {
-        vscLineNumber = '#FFFFFF',
+        d_gray_70 = '#FFFFFF', -- dark theme line numbers, fold column, borders, ...
     },
 
     -- Override highlight groups (see ./lua/vscode/theme.lua)
     group_overrides = {
         -- this supports the same val table as vim.api.nvim_set_hl
         -- use colors from this colorscheme by requiring vscode.colors!
-        Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
+        Cursor = { fg=c.d_blue_20, bg=c.d_green_70, bold=true },
     }
 })
 -- require('vscode').load()
@@ -193,6 +194,21 @@ require("bufferline").setup({
 })
 ```
 
+## Palette
+
+Every color in [`lua/vscode/colors.lua`](./lua/vscode/colors.lua) is named `<theme>_<family>_<rank>`:
+
+- **theme**: `d_` for the dark theme, `l_` for the light theme
+- **family**: one of `black`, `white`, `gray`, `red`, `brown`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`
+- **rank**: `10`, `20`, `30`, … from darkest to lightest within that family
+
+For example `d_blue_60` is the keyword blue of the dark theme. `require('vscode.colors').get_colors()` returns both
+palettes regardless of `background`, so pick the one you need: `vim.o.background == 'dark' and c.d_blue_60 or c.l_blue_30`.
+
+> [!WARNING]
+> Older versions used semantic names such as `vscBack` or `vscLineNumber`. Those keys no longer exist; `color_overrides`
+> and `group_overrides` that use them must be updated to the new names.
+
 ## Switching theme
 
 ```vim
@@ -218,3 +234,22 @@ require("bufferline").setup({
 ## Something is broken but I know how to fix it!
 
 Pull requests are welcome! Feel free to send one with an explanation!
+
+If your change touches colors, please run the tests (they need only `nvim` on
+`PATH`):
+
+```sh
+tests/run.sh
+```
+
+If you changed colors on purpose, regenerate the affected snapshot and include
+it in your PR:
+
+```sh
+nvim --headless --clean --cmd "set rtp+=$PWD" -l tests/snapshot.lua dark >tests/snapshots/dark.txt
+nvim --headless --clean --cmd "set rtp+=$PWD" -l tests/snapshot.lua light >tests/snapshots/light.txt
+```
+
+The snapshots in `tests/snapshots/` list every highlight group the theme defines
+for the dark and light backgrounds, so an intentional color change shows up as a
+small text diff in your PR — and an accidental one is caught before merge.

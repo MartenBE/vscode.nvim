@@ -19,15 +19,15 @@ vscode.load = function(style)
 
     vim.o.termguicolors = true
     vim.g.colors_name = 'vscode'
-    if config.opts.terminal_colors then
-        utils.terminal(require('vscode.colors').get_colors())
-    end
 
     local background = style or config.opts.style
     if background then
         vim.o.background = background
     end
 
+    if config.opts.terminal_colors then
+        utils.terminal(require('vscode.colors').get_colors(), config.opts)
+    end
 
     theme.set_highlights(config.opts)
     theme.link_highlight()

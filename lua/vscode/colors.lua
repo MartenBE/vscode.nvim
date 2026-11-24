@@ -1,168 +1,131 @@
 local colors = {}
+
+-- Palette keys are named <theme>_<family>_<rank>:
+--   - theme: `d_` = dark background, `l_` = light background
+--   - family: black, white, gray, red, brown, orange, yellow, green, blue, purple or pink
+--   - rank: `10`, `20`, `30`, ... from darkest to lightest within the family, without gaps;
+--       a new colour is inserted in lightness order and the rest of the family renumbered
+-- theme.lua picks per attribute, e.g.: `is_dark and c.d_blue_60 or c.l_blue_30`.
 colors.get_colors = function()
-    local mycolors = {} ---@type table<string,string>
+    ---@type table<string,string>
+    local mycolors = {
+        -- Dark theme
+        d_black_10 = '#1F1F1F',
+        d_black_20 = '#202020',
+        d_black_30 = '#222222',
+        d_black_40 = '#252526',
+        d_gray_10 = '#2D2D2D',
+        d_gray_20 = '#373737',
+        d_gray_30 = '#343B41',
+        d_gray_40 = '#404040',
+        d_gray_50 = '#444444',
+        d_gray_60 = '#51504F',
+        d_gray_70 = '#5A5A5A',
+        d_gray_80 = '#515C6A',
+        d_gray_90 = '#636369',
+        d_gray_100 = '#6A6A6A',
+        d_gray_110 = '#707070',
+        d_gray_120 = '#808080',
+        d_gray_130 = '#898989',
+        d_gray_140 = '#8C8C8C',
+        d_gray_150 = '#AEAFAD',
+        d_gray_160 = '#BBBBBB',
+        d_gray_170 = '#D4D4D4',
+        d_white_10 = '#FFFFFF',
+        d_red_10 = '#4B1818',
+        d_red_20 = '#6F1313',
+        d_red_30 = '#C74E39',
+        d_red_40 = '#F44747',
+        d_red_50 = '#D16969',
+        d_brown_10 = '#613315',
+        d_brown_20 = '#4C4C19',
+        d_orange_10 = '#CE9178',
+        d_orange_20 = '#F28B25',
+        d_orange_30 = '#FF9966',
+        d_yellow_10 = '#D7BA7D',
+        d_yellow_20 = '#E2C08D',
+        d_yellow_30 = '#DCDCAA',
+        d_yellow_40 = '#FFD602',
+        d_green_10 = '#373D29',
+        d_green_20 = '#4B5632',
+        d_green_30 = '#6A9955',
+        d_green_40 = '#81B88B',
+        d_green_50 = '#4EC9B0',
+        d_green_60 = '#73C991',
+        d_green_70 = '#B5CEA8',
+        d_blue_10 = '#202D39',
+        d_blue_20 = '#04395E',
+        d_blue_30 = '#084671',
+        d_blue_40 = '#264F78',
+        d_blue_50 = '#646695',
+        d_blue_60 = '#569CD6',
+        d_blue_70 = '#729DB3',
+        d_blue_80 = '#6699FF',
+        d_blue_90 = '#18A2FE',
+        d_blue_100 = '#4FC1FF',
+        d_blue_110 = '#9CDCFE',
+        d_purple_10 = '#9966CC',
+        d_pink_10 = '#C586C0',
 
-    if vim.o.background == 'dark' then
-        mycolors = {
-            vscNone = 'NONE',
-            vscFront = '#D4D4D4',
-            vscBack = '#1F1F1F',
-
-            vscTabCurrent = '#1F1F1F',
-            vscTabOther = '#2D2D2D',
-            vscTabOutside = '#252526',
-
-            vscLeftDark = '#252526',
-            vscLeftMid = '#373737',
-            vscLeftLight = '#636369',
-
-            vscPopupFront = '#BBBBBB',
-            vscPopupBack = '#202020',
-            vscPopupHighlightBlue = '#04395E',
-            vscPopupHighlightGray = '#343B41',
-
-            vscSplitLight = '#898989',
-            vscSplitDark = '#444444',
-            vscSplitThumb = '#424242',
-
-            vscCursorDarkDark = '#222222',
-            vscCursorDark = '#51504F',
-            vscCursorLight = '#AEAFAD',
-            vscSelection = '#264F78',
-            vscLineNumber = '#5A5A5A',
-
-            vscDiffRedDark = '#4B1818',
-            vscDiffRedLight = '#6F1313',
-            vscDiffRedLightLight = '#FB0101',
-            vscDiffGreenDark = '#373D29',
-            vscDiffGreenLight = '#4B5632',
-            vscSearchCurrent = '#515c6a',
-            vscSearch = '#613315',
-
-            vscGitAdded = '#81b88b',
-            vscGitModified = '#e2c08d',
-            vscGitDeleted = '#c74e39',
-            vscGitRenamed = '#73c991',
-            vscGitUntracked = '#73c991',
-            vscGitIgnored = '#8c8c8c',
-            vscGitStageModified = '#e2c08d',
-            vscGitStageDeleted = '#c74e39',
-            vscGitConflicting = '#e4676b',
-            vscGitSubmodule = '#8db9e2',
-
-            vscContext = '#404040',
-            vscContextCurrent = '#707070',
-
-            vscFoldBackground = '#202d39',
-
-            vscSuggestion = '#6A6A6A',
-
-            -- Syntax colors
-            vscGray = '#808080',
-            vscViolet = '#646695',
-            vscBlue = '#569CD6',
-            vscAccentBlue = '#4FC1FF',
-            vscDarkBlue = '#223E55',
-            vscMediumBlue = '#18a2fe',
-            vscDisabledBlue = '#729DB3',
-            vscLightBlue = '#9CDCFE',
-            vscGreen = '#6A9955',
-            vscBlueGreen = '#4EC9B0',
-            vscLightGreen = '#B5CEA8',
-            vscRed = '#F44747',
-            vscOrange = '#CE9178',
-            vscLightRed = '#D16969',
-            vscYellowOrange = '#D7BA7D',
-            vscYellow = '#DCDCAA',
-            vscDarkYellow = '#FFD602',
-            vscPink = '#C586C0',
-
-            -- Low contrast with default background
-            vscDimHighlight = '#51504F',
-        }
-    else
-        mycolors = {
-            vscNone = 'NONE',
-            vscFront = '#343434',
-            vscBack = '#FFFFFF',
-
-            vscTabCurrent = '#FFFFFF',
-            vscTabOther = '#CECECE',
-            vscTabOutside = '#E8E8E8',
-
-            vscLeftDark = '#C4C4C4',
-            vscLeftMid = '#E5E5E5',
-            vscLeftLight = '#F3F3F3',
-
-            vscPopupFront = '#000000',
-            vscPopupBack = '#F8F8F8',
-            vscPopupHighlightBlue = '#0064c1',
-            vscPopupHighlightGray = '#767676',
-
-            vscSplitLight = '#EEEEEE',
-            vscSplitDark = '#DDDDDD',
-            vscSplitThumb = '#DFDFDF',
-
-            vscCursorDarkDark = '#E5E5E5',
-            vscCursorDark = '#6F6F6F',
-            vscCursorLight = '#767676',
-            vscSelection = '#ADD6FF',
-            vscLineNumber = '#098658',
-
-            vscDiffRedDark = '#FFCCCC',
-            vscDiffRedLight = '#FFA3A3',
-            vscDiffRedLightLight = '#FFCCCC',
-            vscDiffGreenDark = '#DBE6C2',
-            vscDiffGreenLight = '#EBF1DD',
-            vscSearchCurrent = '#A8AC94',
-            vscSearch = '#F8C9AB',
-
-            vscGitAdded = '#587c0c',
-            vscGitModified = '#895503',
-            vscGitDeleted = '#ad0707',
-            vscGitRenamed = '#007100',
-            vscGitUntracked = '#007100',
-            vscGitIgnored = '#8e8e90',
-            vscGitStageModified = '#895503',
-            vscGitStageDeleted = '#ad0707',
-            vscGitConflicting = '#ad0707',
-            vscGitSubmodule = '#1258a7',
-
-            vscContext = '#D2D2D2',
-            vscContextCurrent = '#929292',
-
-            vscFoldBackground = '#e6f3ff',
-
-            vscSuggestion = '#868686',
-
-            -- Syntax colors
-            vscGray = '#000000',
-            vscViolet = '#000080',
-            vscBlue = '#0000FF',
-            vscAccentBlue = '#267F99',
-            vscDarkBlue = '#007ACC',
-            vscMediumBlue = '#18a2fe',
-            vscDisabledBlue = '#729DB3',
-            vscLightBlue = '#001080',
-            vscGreen = '#008000',
-            vscBlueGreen = '#16825D',
-            vscLightGreen = '#098658',
-            vscRed = '#FF0000',
-            vscOrange = '#C72E0F',
-            vscLightRed = '#A31515',
-            vscYellowOrange = '#800000',
-            vscYellow = '#795E26',
-            vscPink = '#AF00DB',
-
-            -- Low contrast with default background
-            vscDimHighlight = '#B2DFDB',
-        }
-    end
-
-    -- Other ui specific colors
-    mycolors.vscUiBlue = '#084671'
-    mycolors.vscUiOrange = '#f28b25'
-    mycolors.vscPopupHighlightLightBlue = '#d7eafe'
+        -- Light theme
+        l_black_10 = '#000000',
+        l_gray_10 = '#343434',
+        l_gray_20 = '#6F6F6F',
+        l_gray_30 = '#767676',
+        l_gray_40 = '#868686',
+        l_gray_50 = '#8E8E90',
+        l_gray_60 = '#929292',
+        l_gray_70 = '#A8AC94',
+        l_gray_80 = '#C4C4C4',
+        l_gray_90 = '#CECECE',
+        l_gray_100 = '#D2D2D2',
+        l_gray_110 = '#DDDDDD',
+        l_gray_120 = '#E5E5E5',
+        l_gray_130 = '#E8E8E8',
+        l_gray_140 = '#EEEEEE',
+        l_white_10 = '#F3F3F3',
+        l_white_20 = '#F8F8F8',
+        l_white_30 = '#FFFFFF',
+        l_red_10 = '#800000',
+        l_red_20 = '#A31515',
+        l_red_30 = '#AD0707',
+        l_red_40 = '#C72E0F',
+        l_red_50 = '#FF0000',
+        l_red_60 = '#FFA3A3',
+        l_red_70 = '#FFCCCC',
+        l_orange_10 = '#F28B25',
+        l_orange_20 = '#FF9966',
+        l_orange_30 = '#F8C9AB',
+        l_yellow_10 = '#895503',
+        l_yellow_20 = '#795E26',
+        l_yellow_30 = '#B8860B',
+        l_yellow_40 = '#FFA500',
+        l_yellow_50 = '#FFFFBA',
+        l_green_10 = '#007100',
+        l_green_20 = '#008000',
+        l_green_30 = '#587C0C',
+        l_green_40 = '#16825D',
+        l_green_50 = '#098658',
+        l_green_60 = '#DBE6C2',
+        l_green_70 = '#EBF1DD',
+        l_blue_10 = '#000080',
+        l_blue_20 = '#001080',
+        l_blue_30 = '#0000FF',
+        l_blue_40 = '#285EBA',
+        l_blue_50 = '#0064C1',
+        l_blue_60 = '#2A64B9',
+        l_blue_70 = '#267F99',
+        l_blue_80 = '#007ACC',
+        l_blue_90 = '#729DB3',
+        l_blue_100 = '#6699FF',
+        l_blue_110 = '#18A2FE',
+        l_blue_120 = '#ADD6FF',
+        l_blue_130 = '#B2DFDB',
+        l_blue_140 = '#D7EAFE',
+        l_blue_150 = '#E6F3FF',
+        l_purple_10 = '#AF00DB',
+        l_purple_20 = '#9966CC',
+    }
 
     -- Extend the colors with overrides passed by `color_overrides`
     local config = require('vscode.config')
