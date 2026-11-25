@@ -3,7 +3,7 @@ alpha=1.00
 foreground=3b3b3b
 background=ffffff
 selection-background=add6ff
-cursor=ffffff 000000
+cursor=ffffff 005fb8
 
 ## Normal/regular colors (color palette 0-7)
  regular0=000000  # black

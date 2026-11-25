@@ -8,7 +8,7 @@ foreground = '#CCCCCC'
 
 [colors.cursor]
 text = "#1F1F1F"
-cursor = "#AEAFAD"
+cursor = "#CCCCCC"
 
 [colors.selection]
 text = "CellForeground"

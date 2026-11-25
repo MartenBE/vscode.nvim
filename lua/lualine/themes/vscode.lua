@@ -5,7 +5,8 @@ local vscode = {}
 local colors = {}
 
 -- Follows VS Code's Dark Modern / Light Modern status bar (statusBar.*); the normal mode uses the
--- accent color, the other modes keep their own hue.
+-- accent color, the other modes keep their own hue in section a. Section b uses the status bar text color
+-- (statusBar.foreground), like the starship prompt and the wezterm tab bar.
 if vim.o.background == 'dark' then
     colors.inactive = '#9D9D9D'
     colors.bg = '#181818'
@@ -34,13 +35,13 @@ end
 
 vscode.normal = {
     a = { fg = colors.accent_fg, bg = colors.blue, gui = 'bold' },
-    b = { fg = colors.blue, bg = config.opts.transparent and 'NONE' or colors.bg2 },
+    b = { fg = colors.fg, bg = config.opts.transparent and 'NONE' or colors.bg2 },
     c = { fg = colors.fg, bg = config.opts.transparent and 'NONE' or colors.bg },
 }
 
 vscode.visual = {
     a = { fg = colors.bg, bg = colors.yellow, gui = 'bold' },
-    b = { fg = colors.yellow, bg = config.opts.transparent and 'NONE' or colors.bg },
+    b = { fg = colors.fg, bg = config.opts.transparent and 'NONE' or colors.bg },
 }
 
 vscode.inactive = {
@@ -51,13 +52,13 @@ vscode.inactive = {
 
 vscode.replace = {
     a = { fg = vim.o.background == 'dark' and colors.bg or colors.fg, bg = colors.red, gui = 'bold' },
-    b = { fg = colors.red, bg = config.opts.transparent and 'NONE' or colors.bg2 },
+    b = { fg = colors.fg, bg = config.opts.transparent and 'NONE' or colors.bg2 },
     c = { fg = colors.fg, bg = config.opts.transparent and 'NONE' or colors.bg },
 }
 
 vscode.insert = {
     a = { fg = colors.bg, bg = colors.green, gui = 'bold' },
-    b = { fg = colors.green, bg = config.opts.transparent and 'NONE' or colors.bg2 },
+    b = { fg = colors.fg, bg = config.opts.transparent and 'NONE' or colors.bg2 },
     c = { fg = colors.fg, bg = config.opts.transparent and 'NONE' or colors.bg },
 }
 
@@ -69,7 +70,7 @@ vscode.terminal = {
 
 vscode.command = {
     a = { fg = vim.o.background == 'dark' and colors.bg or colors.fg, bg = colors.pink, gui = 'bold' },
-    b = { fg = colors.pink, bg = config.opts.transparent and 'NONE' or colors.bg2 },
+    b = { fg = colors.fg, bg = config.opts.transparent and 'NONE' or colors.bg2 },
     c = { fg = colors.fg, bg = config.opts.transparent and 'NONE' or colors.bg },
 }
 

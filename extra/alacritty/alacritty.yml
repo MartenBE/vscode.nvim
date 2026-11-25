@@ -9,7 +9,7 @@ schemes:
 
     cursor:
       text: "#FFFFFF"
-      cursor: "#000000"
+      cursor: "#005FB8"
 
     selection:
       text: CellForeground
@@ -42,7 +42,7 @@ schemes:
 
     cursor:
       text: "#1F1F1F"
-      cursor: "#AEAFAD"
+      cursor: "#CCCCCC"
 
     selection:
       text: CellForeground

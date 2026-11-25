@@ -16,7 +16,7 @@ set_from_resource $color14     i3wm.color14     #29b8db
 set_from_resource $color15     i3wm.color15     #e5e5e5
 set_from_resource $foreground  i3wm.foreground  #cccccc
 set_from_resource $background  i3wm.background  #1f1f1f
-set_from_resource $cursorColor i3wm.cursorColor #aeafad
+set_from_resource $cursorColor i3wm.cursorColor #cccccc
 
 # class, border, bg, text, indicator, child border
 client.focused           $color6 $color6 $background $color6 $color6

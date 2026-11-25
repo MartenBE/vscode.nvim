@@ -22,7 +22,7 @@ palette = 15=#E5E5E5
 
 background = #1F1F1F
 foreground = #CCCCCC
-cursor-color = #AEAFAD
+cursor-color = #CCCCCC
 
 selection-background = #264F78
 selection-foreground = #FFFFFF
